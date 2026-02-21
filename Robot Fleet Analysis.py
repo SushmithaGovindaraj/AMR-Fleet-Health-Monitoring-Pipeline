@@ -39,7 +39,7 @@ def generate_robot_logs(rows=5000):
     data = []
     start_time = datetime.now()
 
-    # Track each robot's live state
+    # Each robot starts with a full battery and a random position on the warehouse floor
     robot_states = {
         r: {
             "battery": 100.0,
@@ -55,15 +55,15 @@ def generate_robot_logs(rows=5000):
         # Base motor temperature (normal range: 35–40°C)
         temp = 38 + np.random.normal(0, 1.5)
 
-        # AMR_002: Gradual motor heating after event marker
+        # AMR_002: Simulates a motor bearing failure — temperature rises gradually past row 2000
         if r_id == 'AMR_002' and i > 2000:
             temp += (i - 2000) * 0.012 + np.random.uniform(5, 15)
 
-        # AMR_004: Battery drains 3x faster than normal
+        # AMR_004: Simulates a faulty battery cell — drains 3x faster than healthy robots
         drain_rate = 0.15 if r_id == 'AMR_004' else 0.05
         state["battery"] = max(0, state["battery"] - drain_rate)
         if state["battery"] < 5:
-            state["battery"] = 100.0  # Auto-recharge
+            state["battery"] = 100.0  # Robot returns to charging dock
 
         # Simulate movement (small position changes)
         state["x"] += np.random.uniform(-1, 1)
