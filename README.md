@@ -1,5 +1,9 @@
 # AMR Fleet Health Monitoring & Intelligence 🦾📊
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![Databricks](https://img.shields.io/badge/Platform-Databricks-orange?logo=databricks&logoColor=white)
+![ML](https://img.shields.io/badge/ML-Random%20Forest-green?logo=scikit-learn&logoColor=white)
+
 Welcome to the next level of robot fleet management. This project has been enhanced from a simple monitoring script into a comprehensive **Intelligence & Monitoring Pipeline**.
 
 ## 🌟 The "Data Journey"
