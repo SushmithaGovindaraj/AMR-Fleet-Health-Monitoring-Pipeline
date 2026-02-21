@@ -118,6 +118,7 @@ fleet_risk = (
 )
 
 fleet_risk['risk_level'] = fleet_risk['avg_failure_prob'].apply(
+    # Thresholds: >40% avg probability = HIGH risk, >10% = MEDIUM, otherwise LOW
     lambda p: "🔴 HIGH" if p > 0.4 else ("⚠️ MEDIUM" if p > 0.1 else "✅ LOW")
 )
 
