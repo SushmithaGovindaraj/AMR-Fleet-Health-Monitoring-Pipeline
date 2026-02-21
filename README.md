@@ -1,33 +1,38 @@
-# AMR-Fleet-Health-Monitoring-Pipeline 🤖📊
+# AMR Fleet Health Monitoring & Intelligence 🦾📊
 
-A scalable data engineering pipeline built on **Databricks** and **PySpark** to monitor, analyze, and detect anomalies in Autonomous Mobile Robot (AMR) fleets.
+Welcome to the next level of robot fleet management. This project has been enhanced from a simple monitoring script into a comprehensive **Intelligence & Monitoring Pipeline**.
 
-## 🚀 Tech Stack
-- **Language:** Python (PySpark)
-- **Platform:** Databricks
-- **Storage:** Delta Lake (Bronze/Silver architecture)
-- **Libraries:** Pandas, NumPy, PySpark SQL
+## 🌟 The "Data Journey"
+We've organized our technical logic into a human-readable "Data Journey" that describes how raw signals become actionable insights.
 
-## � Project Overview
-This project simulates real-world telemetry data from a fleet of robots (AMRs) and implements a robust data pipeline to identify sensor anomalies—specifically motor temperature spikes—that could indicate hardware failure.
+1.  **Phase 1: Raw Collection 📥**
+    - Robots stream telemetry including battery levels, motor temperatures, and GPS coordinates.
+    - We simulate realistic failure modes like gradual overheating and excessive battery drain.
+2.  **Phase 2: Data Refining 🧹**
+    - Technical cleaning and "Feature Engineering" (e.g., rolling temperature averages).
+    - Preparing data for our AI models.
+3.  **Phase 3: Fleet Insights 💡**
+    - Translates complex data into human alerts like "CRITICAL: Overheating" or "WARNING: Low Battery".
 
-> [!NOTE]
-> This project was developed and tested on **Databricks Community Edition**, leveraging its built-in Spark and Delta Lake capabilities.
+## 🧠 Intelligence Layer (Predictive Maintenance)
+Instead of just reacting to failures, our system now **predicts** them. Our Intelligence Layer uses a Machine Learning model to analyze trends and flag robots that are likely to fail in the near future.
 
-By leveraging **Delta Lake** and **Window Functions**, the pipeline provides actionable insights into fleet health and predictive maintenance needs.
+## 📊 Visual Command Center
+We've built a real-time dashboard using **Streamlit** to give you a birds-eye view of your entire fleet:
+- **Global Health Meter**: A single score to track the overall status of all robots.
+- **Live Map**: Track the location of your AMRs in real-time.
+- **Intelligence Dashboard**: See which robots are healthy and which ones need immediate service.
 
-## �🛠️ Pipeline Features
-- **Real-time Simulation:** Generates synthetic telemetry logs (battery, temperature, status) for multiple AMRs.
-- **Delta Lake Integration:** Persists raw and processed data in Delta tables for reliability and performance.
-- **Anomaly Detection:** Uses PySpark Window functions to calculate temperature deltas and flag sudden spikes (potential motor issues).
-## 📊 Analysis Results
-The following visualization showcases the aggregated anomalies detected by the pipeline. In our simulation, **AMR_002** was programmed with a hidden motor issue, which the pipeline successfully identified via temperature spikes.
+## 🚀 Getting Started
+1.  **Run the Pipeline**: Use `Robot Fleet Analysis.py` in Databricks to process the Data Journey.
+2.  **Train the Intelligence**: Run `Predictive_Model.py` to refresh the failure prediction model.
+3.  **Open the Command Center**:
+    ```bash
+    streamlit run dashboard/app.py
+    ```
 
-![AMR Anomalies Chart](assets/anomalies_chart.png)
-
-> **Insight:** The high count of alerts for `AMR_002` signals a critical maintenance requirement, demonstrating the pipeline's effectiveness in predictive monitoring.
-
-## 📈 Future Enhancements
-- Integration with live IoT telemetry streams.
-- ML-based predictive maintenance scoring.
-- Dashboard visualization using Databricks SQL.
+## 🛠️ Tech Stack
+- **Data Engine**: PySpark & Delta Lake (Databricks)
+- **Intelligence**: Scikit-learn (Random Forest)
+- **Visualization**: Streamlit
+- **Simulation**: NumPy & Pandas
