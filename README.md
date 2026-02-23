@@ -21,22 +21,14 @@ We've organized our technical logic into a human-readable "Data Journey" that de
 ## 🧠 Intelligence Layer (Predictive Maintenance)
 Instead of just reacting to failures, our system now **predicts** them. Our Intelligence Layer uses a Machine Learning model to analyze trends and flag robots that are likely to fail in the near future.
 
-## 📊 Visual Command Center
-We've built a real-time dashboard using **Streamlit** to give you a birds-eye view of your entire fleet:
-- **Global Health Meter**: A single score to track the overall status of all robots.
-- **Live Map**: Track the location of your AMRs in real-time.
-- **Intelligence Dashboard**: See which robots are healthy and which ones need immediate service.
+## 🧠 Intelligence Layer (Predictive Maintenance)
+Instead of just reacting to failures, our system now **predicts** them. Our Intelligence Layer uses a Machine Learning model to analyze trends and flag robots that are likely to fail in the near future.
 
 ## 🚀 Getting Started
 1.  **Run the Pipeline**: Use `Robot Fleet Analysis.py` in Databricks to process the Data Journey.
-2.  **Train the Intelligence**: Run `Predictive_Model.py` to refresh the failure prediction model.
-3.  **Open the Command Center**:
-    ```bash
-    streamlit run dashboard/app.py
-    ```
+2.  **Train the Intelligence**: Run `Predictive_Maintenance.py` to refresh the failure prediction model.
 
 ## 🛠️ Tech Stack
 - **Data Engine**: PySpark & Delta Lake (Databricks)
 - **Intelligence**: Scikit-learn (Random Forest)
-- **Visualization**: Streamlit
 - **Simulation**: NumPy & Pandas
